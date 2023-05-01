@@ -4,6 +4,7 @@ import langColors from './assets/lang-color.json'
 import GitBoard from './GitBoard/GitBoard'
 import Header from './Header/Header'
 import axios from 'axios'
+import DarkSwitch from './DarkMode/DarkSwitch'
 
 function App() {
   const [gitRepos, setGitRepos] = useState()
@@ -18,11 +19,11 @@ function App() {
   }
 
   return (
-    <>
+    <div className='h-full'>
+      <DarkSwitch />
       <Header />
-      <h1 className='text-4xl text-center font-bold mt-5 mb-10'> GitHub repository</h1>
       <GitBoard data={gitRepos} langColors={langColors}/>
-    </>
+    </div>
   )
 }
 
